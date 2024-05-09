@@ -12,10 +12,4 @@ export const ormConfig = {
   entities: ['src/**/*.entity.{ts,js}'],
 };
 
-// Inject TypeORMModule with ormConfig
-@Module({
-  imports: [TypeOrmModule.forRoot(ormConfig)],
-  // ...
-})
-export class AppModule {}
 
