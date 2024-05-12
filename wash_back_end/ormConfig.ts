@@ -2,7 +2,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-export const ormConfig = {
+const ormConfig = {
   type: 'postgres',
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT) || 5434,
@@ -11,5 +11,5 @@ export const ormConfig = {
   database: process.env.DB_DATABASE,
   entities: ['src/**/*.entity.{ts,js}'],
 };
-
+module.exports = ormConfig;
 
