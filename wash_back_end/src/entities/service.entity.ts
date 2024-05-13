@@ -1,16 +1,16 @@
 import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
-export class Client {
+export class Service {
     @PrimaryGeneratedColumn('uuid')
-    id: number;
+    id: string;
 
     @Column()
     name: string;
 
     @Column()
-    email: string;
+    description: string;
 
     @Column()
-    licence_plate: string;
+    price: number;
 }

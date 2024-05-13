@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
-export class Client {
+export class Extra {
     @PrimaryGeneratedColumn('uuid')
     id: number;
 
@@ -9,8 +9,9 @@ export class Client {
     name: string;
 
     @Column()
-    email: string;
+    description: string;
 
     @Column()
-    licence_plate: string;
+    price: number;
+
 }
