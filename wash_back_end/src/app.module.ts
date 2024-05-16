@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
-import { ormConfig } from './ormConfig';
+import { ormConfig } from '../ormConfig';
 
 dotenv.config();
 
