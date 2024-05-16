@@ -1,15 +1,24 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
-import { ormConfig } from '../ormConfig';
+import { ServiceController } from './service/service.controller';
+import { ServiceModule } from './service/service.module';
+import { ConfigModule } from '@nestjs/config';
+
+import typeorm from './config/postgresDataSource';
+import { DatabaseModule } from './config/database.module';
 
 dotenv.config();
 
 @Module({
-  imports: [TypeOrmModule.forRoot(ormConfig)],
-  controllers: [AppController],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true, load: [typeorm] }),
+    DatabaseModule,
+    ServiceModule,
+    DatabaseModule.forRoot(),
+  ],
+  controllers: [AppController, ServiceController],
   providers: [AppService],
 })
 export class AppModule {}

@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
-export class ServiceEntity {
+export class Extra {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    id: number;
 
     @Column()
     name: string;
@@ -13,4 +13,5 @@ export class ServiceEntity {
 
     @Column()
     price: number;
+
 }
