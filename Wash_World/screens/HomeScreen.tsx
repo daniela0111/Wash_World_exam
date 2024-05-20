@@ -1,13 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View} from 'react-native';
 
-const BackgrountComponent = () => {
+const HomeScreen = () => {
     return (
-       <View style={{backgroundColor: '#000000' }}> 
-       </View>
+        <View>
+            <Text>Home Screen</Text>
+        </View>
     );
 };
-
-export default BackgrountComponent;
-
+export default HomeScreen;
 
